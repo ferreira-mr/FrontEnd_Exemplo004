@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+ul li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+.delete-btn, .edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+.edit-btn {
+    right: 40px;
+}
+.task-counter {
+    background: #f8f9fa;
+    padding: 10px 0;
+}
+
+.task-counter i {
+    margin: 0 15px;
+    font-size: 1.5em;
+    display: inline-block;
+    position: relative;
+}
+
+.task-counter i::after {
+    content: attr(data-count);
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal; 
+    font-size: em;
+    position: absolute;
+    top: 0;
+    right: -25px;
+}

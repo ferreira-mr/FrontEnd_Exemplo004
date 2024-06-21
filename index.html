@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Lista de Tarefas</h2>
+        <div class="row justify-content-center mb-3">
+            <div class="col-8">
+                <div class="input-group">
+                    <input type="text" id="entradaTarefa" class="form-control" placeholder="Adicionar nova tarefa...">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" onclick="adicionarTarefa()">Adicionar Tarefa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        A Fazer
+                    </div>
+                    <ul id="listaAFazer" class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Em Progresso
+                    </div>
+                    <ul id="listaEmProgresso" class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        Concluído
+                    </div>
+                    <ul id="listaConcluido" class="list-group list-group-flush"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="task-counter text-center fixed-bottom">
+        <i class="fas fa-tasks" data-count="0" id="contadorAFazer"></i>
+        <i class="fas fa-spinner" data-count="0" id="contadorEmProgresso"></i>
+        <i class="fas fa-check-circle" data-count="0" id="contadorConcluido"></i>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
