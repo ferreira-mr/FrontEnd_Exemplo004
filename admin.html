@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração de Usuários</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Administração de Usuários</h2>
+            <button class="btn btn-secondary" onclick="sair()" title="Sair">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+        <div id="feedback" class="alert d-none"></div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-8">
+                <h4>Lista de Usuários</h4>
+                <ul id="userList" class="list-group mb-3"></ul>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                <h4 class="text-center">Registrar Novo Usuário</h4>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="newUsername">Novo Usuário</label>
+                        <input type="text" id="newUsername" class="form-control" placeholder="Novo Usuário" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Nova Senha</label>
+                        <input type="password" id="newPassword" class="form-control" placeholder="Nova Senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

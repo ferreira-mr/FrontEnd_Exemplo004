@@ -4,7 +4,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-
 ul li {
     display: flex;
     justify-content: space-between;
@@ -12,10 +11,12 @@ ul li {
     cursor: pointer;
     position: relative;
 }
+
 ul li.completed {
     text-decoration: line-through;
     color: #888;
 }
+
 .delete-btn, .edit-btn {
     background: none;
     border: none;
@@ -23,9 +24,11 @@ ul li.completed {
     position: absolute;
     right: 10px;
 }
+
 .edit-btn {
     right: 40px;
 }
+
 .task-counter {
     background: #f8f9fa;
     padding: 10px 0;
@@ -42,7 +45,7 @@ ul li.completed {
     content: attr(data-count);
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
-    font-weight: normal; 
+    font-weight: normal;
     font-size: em;
     position: absolute;
     top: 0;

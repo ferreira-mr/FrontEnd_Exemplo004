@@ -3,60 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
+    <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.js"></script>
+    <style>
+        /* Additional styles to center the login form */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container .form-group {
+            width: 100%;
+        }
+        .login-container .btn {
+            width: 100%;
+        }
+        .feedback-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="login-container">
         <h2 class="text-center">Lista de Tarefas</h2>
-        <div class="row justify-content-center mb-3">
-            <div class="col-8">
-                <div class="input-group">
-                    <input type="text" id="entradaTarefa" class="form-control" placeholder="Adicionar nova tarefa...">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" onclick="adicionarTarefa()">Adicionar Tarefa</button>
-                    </div>
-                </div>
+        <div id="feedback" class="alert d-none feedback-container"></div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" class="form-control" placeholder="Usuário" required>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        A Fazer
-                    </div>
-                    <ul id="listaAFazer" class="list-group list-group-flush"></ul>
-                </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" class="form-control" placeholder="Senha" required>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        Em Progresso
-                    </div>
-                    <ul id="listaEmProgresso" class="list-group list-group-flush"></ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        Concluído
-                    </div>
-                    <ul id="listaConcluido" class="list-group list-group-flush"></ul>
-                </div>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-success">Login</button>
+        </form>
     </div>
-    <div class="task-counter text-center fixed-bottom">
-        <i class="fas fa-tasks" data-count="0" id="contadorAFazer"></i>
-        <i class="fas fa-spinner" data-count="0" id="contadorEmProgresso"></i>
-        <i class="fas fa-check-circle" data-count="0" id="contadorConcluido"></i>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+
+    <script src="login.js"></script>
 </body>
 </html>
