@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container .form-group {
+    width: 100%;
+}
+
+.login-container .btn {
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-container .btn:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+}
+
+.feedback-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: auto;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.alert {
+    display: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}

@@ -85,16 +85,18 @@ function sair() {
     window.location.href = 'index.html';
 }
 
-// Moved functions from common.js
-
 // Função para mostrar feedback
 function mostrarFeedback(mensagem, tipo = 'success') {
     const feedbackElement = document.getElementById('feedback');
     feedbackElement.textContent = mensagem;
-    feedbackElement.className = `alert alert-${tipo}`;
+    feedbackElement.className = `alert alert-${tipo} show`;
     feedbackElement.classList.remove('d-none');
     setTimeout(() => {
-        feedbackElement.classList.add('d-none');
+        feedbackElement.classList.add('hide');
+        setTimeout(() => {
+            feedbackElement.classList.remove('show', 'hide');
+            feedbackElement.classList.add('d-none');
+        }, 500);
     }, 3000);
 }
 
@@ -118,10 +120,13 @@ function criarTarefa(lista, texto, concluido = false) {
     btnExcluir.onclick = function(event) {
         event.stopPropagation();
         if (confirm('Você tem certeza que deseja excluir esta tarefa?')) {
-            lista.removeChild(li);
-            salvarTarefas();
-            atualizarContadores();
-            mostrarFeedback('Tarefa removida com sucesso.', 'success');
+            li.classList.add('removing');
+            setTimeout(() => {
+                lista.removeChild(li);
+                salvarTarefas();
+                atualizarContadores();
+                mostrarFeedback('Tarefa removida com sucesso.', 'success');
+            }, 500);
         }
     };
 

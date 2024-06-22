@@ -10,6 +10,7 @@ ul li {
     align-items: center;
     cursor: pointer;
     position: relative;
+    animation: fadeIn 0.5s;
 }
 
 ul li.completed {
@@ -50,4 +51,44 @@ ul li.completed {
     position: absolute;
     top: 0;
     right: -25px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.list-group-item.removing {
+    animation: fadeOut 0.5s;
+}
+
+.feedback-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    width: auto;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.alert {
+    display: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: translateY(-20px);
 }

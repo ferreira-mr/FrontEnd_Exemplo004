@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'todo.html';
             }
         } else {
-            mostrarFeedback('Login falhou. Verifique suas credenciais.', 'danger');
+            mostrarFeedback('Login falhou. Usuário ou senha incorretos.', 'danger');
         }
     });
 });
@@ -38,9 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function mostrarFeedback(mensagem, tipo = 'success') {
     const feedbackElement = document.getElementById('feedback');
     feedbackElement.textContent = mensagem;
-    feedbackElement.className = `alert alert-${tipo}`;
+    feedbackElement.className = `alert alert-${tipo} show`;
     feedbackElement.classList.remove('d-none');
     setTimeout(() => {
-        feedbackElement.classList.add('d-none');
+        feedbackElement.classList.add('hide');
+        setTimeout(() => {
+            feedbackElement.classList.remove('show', 'hide');
+            feedbackElement.classList.add('d-none');
+        }, 500);
     }, 3000);
 }
